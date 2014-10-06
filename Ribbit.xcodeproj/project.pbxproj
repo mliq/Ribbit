@@ -14,6 +14,12 @@
 		0432E74119E33F3300D4844D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0432E74019E33F3300D4844D /* Images.xcassets */; };
 		0432E74419E33F3300D4844D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432E74219E33F3300D4844D /* LaunchScreen.xib */; };
 		0432E75019E33F3300D4844D /* RibbitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432E74F19E33F3300D4844D /* RibbitTests.m */; };
+		0432E75F19E3418100D4844D /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 0432E75919E3418100D4844D /* camera.png */; };
+		0432E76019E3418100D4844D /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0432E75A19E3418100D4844D /* camera@2x.png */; };
+		0432E76119E3418100D4844D /* friends.png in Resources */ = {isa = PBXBuildFile; fileRef = 0432E75B19E3418100D4844D /* friends.png */; };
+		0432E76219E3418100D4844D /* friends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0432E75C19E3418100D4844D /* friends@2x.png */; };
+		0432E76319E3418100D4844D /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 0432E75D19E3418100D4844D /* inbox.png */; };
+		0432E76419E3418100D4844D /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0432E75E19E3418100D4844D /* inbox@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,12 @@
 		0432E74919E33F3300D4844D /* RibbitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RibbitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0432E74E19E33F3300D4844D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0432E74F19E33F3300D4844D /* RibbitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RibbitTests.m; sourceTree = "<group>"; };
+		0432E75919E3418100D4844D /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		0432E75A19E3418100D4844D /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		0432E75B19E3418100D4844D /* friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends.png; sourceTree = "<group>"; };
+		0432E75C19E3418100D4844D /* friends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends@2x.png"; sourceTree = "<group>"; };
+		0432E75D19E3418100D4844D /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbox.png; sourceTree = "<group>"; };
+		0432E75E19E3418100D4844D /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,7 @@
 		0432E73219E33F3300D4844D /* Ribbit */ = {
 			isa = PBXGroup;
 			children = (
+				0432E76519E3418E00D4844D /* Images */,
 				0432E73719E33F3300D4844D /* AppDelegate.h */,
 				0432E73819E33F3300D4844D /* AppDelegate.m */,
 				0432E73A19E33F3300D4844D /* ViewController.h */,
@@ -117,6 +130,19 @@
 				0432E74E19E33F3300D4844D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0432E76519E3418E00D4844D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0432E75919E3418100D4844D /* camera.png */,
+				0432E75A19E3418100D4844D /* camera@2x.png */,
+				0432E75B19E3418100D4844D /* friends.png */,
+				0432E75C19E3418100D4844D /* friends@2x.png */,
+				0432E75D19E3418100D4844D /* inbox.png */,
+				0432E75E19E3418100D4844D /* inbox@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +226,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0432E73F19E33F3300D4844D /* Main.storyboard in Resources */,
+				0432E76119E3418100D4844D /* friends.png in Resources */,
+				0432E76219E3418100D4844D /* friends@2x.png in Resources */,
+				0432E76019E3418100D4844D /* camera@2x.png in Resources */,
+				0432E76319E3418100D4844D /* inbox.png in Resources */,
 				0432E74419E33F3300D4844D /* LaunchScreen.xib in Resources */,
+				0432E75F19E3418100D4844D /* camera.png in Resources */,
 				0432E74119E33F3300D4844D /* Images.xcassets in Resources */,
+				0432E76419E3418100D4844D /* inbox@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
