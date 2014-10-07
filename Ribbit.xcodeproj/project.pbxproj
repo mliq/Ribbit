@@ -32,6 +32,8 @@
 		04BC9B0119E45D7700EB0590 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BC9AF719E45D7700EB0590 /* Security.framework */; };
 		04BC9B0219E45D7700EB0590 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BC9AF819E45D7700EB0590 /* StoreKit.framework */; };
 		04BC9B0319E45D7700EB0590 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BC9AF919E45D7700EB0590 /* SystemConfiguration.framework */; };
+		04BC9B0619E4625500EB0590 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC9B0519E4625500EB0590 /* LoginViewController.m */; };
+		04BC9B0919E4626100EB0590 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC9B0819E4626100EB0590 /* SignupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +66,8 @@
 		0432E75E19E3418100D4844D /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
 		0432E76619E3568700D4844D /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
 		0432E76719E3568700D4844D /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
-		04BC9AEC19E45CFC00EB0590 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		04BC9AED19E45CFD00EB0590 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		04BC9AEC19E45CFC00EB0590 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Ribbit/Bolts.framework; sourceTree = "<group>"; };
+		04BC9AED19E45CFD00EB0590 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Ribbit/Parse.framework; sourceTree = "<group>"; };
 		04BC9AF019E45D7700EB0590 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		04BC9AF119E45D7700EB0590 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		04BC9AF219E45D7700EB0590 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,6 +78,10 @@
 		04BC9AF719E45D7700EB0590 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		04BC9AF819E45D7700EB0590 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		04BC9AF919E45D7700EB0590 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		04BC9B0419E4625500EB0590 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		04BC9B0519E4625500EB0590 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		04BC9B0719E4626100EB0590 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		04BC9B0819E4626100EB0590 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,16 +117,7 @@
 		0432E72719E33F3300D4844D = {
 			isa = PBXGroup;
 			children = (
-				04BC9AF019E45D7700EB0590 /* AudioToolbox.framework */,
-				04BC9AF119E45D7700EB0590 /* CFNetwork.framework */,
-				04BC9AF219E45D7700EB0590 /* CoreGraphics.framework */,
-				04BC9AF319E45D7700EB0590 /* CoreLocation.framework */,
-				04BC9AF419E45D7700EB0590 /* libz.dylib */,
-				04BC9AF519E45D7700EB0590 /* MobileCoreServices.framework */,
-				04BC9AF619E45D7700EB0590 /* QuartzCore.framework */,
-				04BC9AF719E45D7700EB0590 /* Security.framework */,
-				04BC9AF819E45D7700EB0590 /* StoreKit.framework */,
-				04BC9AF919E45D7700EB0590 /* SystemConfiguration.framework */,
+				04BC9B0A19E4628100EB0590 /* Frameworks */,
 				0432E73219E33F3300D4844D /* Ribbit */,
 				0432E74C19E33F3300D4844D /* RibbitTests */,
 				0432E73119E33F3300D4844D /* Products */,
@@ -139,8 +136,6 @@
 		0432E73219E33F3300D4844D /* Ribbit */ = {
 			isa = PBXGroup;
 			children = (
-				04BC9AEC19E45CFC00EB0590 /* Bolts.framework */,
-				04BC9AED19E45CFD00EB0590 /* Parse.framework */,
 				0432E76519E3418E00D4844D /* Images */,
 				0432E73719E33F3300D4844D /* AppDelegate.h */,
 				0432E73819E33F3300D4844D /* AppDelegate.m */,
@@ -149,6 +144,10 @@
 				0432E76719E3568700D4844D /* InboxViewController.m */,
 				0432E74019E33F3300D4844D /* Images.xcassets */,
 				0432E74219E33F3300D4844D /* LaunchScreen.xib */,
+				04BC9B0419E4625500EB0590 /* LoginViewController.h */,
+				04BC9B0519E4625500EB0590 /* LoginViewController.m */,
+				04BC9B0719E4626100EB0590 /* SignupViewController.h */,
+				04BC9B0819E4626100EB0590 /* SignupViewController.m */,
 				0432E73319E33F3300D4844D /* Supporting Files */,
 			);
 			path = Ribbit;
@@ -191,6 +190,25 @@
 				0432E75E19E3418100D4844D /* inbox@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		04BC9B0A19E4628100EB0590 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04BC9AEC19E45CFC00EB0590 /* Bolts.framework */,
+				04BC9AED19E45CFD00EB0590 /* Parse.framework */,
+				04BC9AF019E45D7700EB0590 /* AudioToolbox.framework */,
+				04BC9AF119E45D7700EB0590 /* CFNetwork.framework */,
+				04BC9AF219E45D7700EB0590 /* CoreGraphics.framework */,
+				04BC9AF319E45D7700EB0590 /* CoreLocation.framework */,
+				04BC9AF419E45D7700EB0590 /* libz.dylib */,
+				04BC9AF519E45D7700EB0590 /* MobileCoreServices.framework */,
+				04BC9AF619E45D7700EB0590 /* QuartzCore.framework */,
+				04BC9AF719E45D7700EB0590 /* Security.framework */,
+				04BC9AF819E45D7700EB0590 /* StoreKit.framework */,
+				04BC9AF919E45D7700EB0590 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,9 +317,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BC9B0619E4625500EB0590 /* LoginViewController.m in Sources */,
 				0432E73919E33F3300D4844D /* AppDelegate.m in Sources */,
 				0432E73619E33F3300D4844D /* main.m in Sources */,
 				0432E76819E3568700D4844D /* InboxViewController.m in Sources */,
+				04BC9B0919E4626100EB0590 /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
