@@ -53,6 +53,9 @@
                                 <state key="normal" title="Log In">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="7zI-TP-X23" eventType="touchUpInside" id="Th3-p6-f0a"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9oB-Og-4wZ">
                                 <rect key="frame" x="34" y="98" width="253" height="30"/>
@@ -86,6 +89,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Ribbit" id="22j-v0-dId"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="password" destination="inr-a2-TnN" id="c0J-ev-m7n"/>
+                        <outlet property="username" destination="9oB-Og-4wZ" id="yQ2-2s-E6V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCg-Om-Ttz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
