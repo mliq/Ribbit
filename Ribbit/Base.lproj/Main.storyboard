@@ -90,8 +90,8 @@
                     <navigationItem key="navigationItem" title="Ribbit" id="22j-v0-dId"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="password" destination="inr-a2-TnN" id="c0J-ev-m7n"/>
-                        <outlet property="username" destination="9oB-Og-4wZ" id="yQ2-2s-E6V"/>
+                        <outlet property="passwordField" destination="inr-a2-TnN" id="Z7t-Td-wKd"/>
+                        <outlet property="usernameField" destination="9oB-Og-4wZ" id="wJr-XV-2b8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCg-Om-Ttz" userLabel="First Responder" sceneMemberID="firstResponder"/>
