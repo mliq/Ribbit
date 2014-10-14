@@ -20,6 +20,7 @@
 		0432E76319E3418100D4844D /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 0432E75D19E3418100D4844D /* inbox.png */; };
 		0432E76419E3418100D4844D /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0432E75E19E3418100D4844D /* inbox@2x.png */; };
 		0432E76819E3568700D4844D /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432E76719E3568700D4844D /* InboxViewController.m */; };
+		04BBFFB919EDCA3E0056B5C7 /* EditFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BBFFB819EDCA3E0056B5C7 /* EditFriendsTableViewController.m */; };
 		04BC9AEE19E45CFD00EB0590 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BC9AEC19E45CFC00EB0590 /* Bolts.framework */; };
 		04BC9AEF19E45CFD00EB0590 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BC9AED19E45CFD00EB0590 /* Parse.framework */; };
 		04BC9AFA19E45D7700EB0590 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BC9AF019E45D7700EB0590 /* AudioToolbox.framework */; };
@@ -66,6 +67,8 @@
 		0432E75E19E3418100D4844D /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
 		0432E76619E3568700D4844D /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
 		0432E76719E3568700D4844D /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
+		04BBFFB719EDCA3E0056B5C7 /* EditFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditFriendsTableViewController.h; path = ../EditFriendsTableViewController.h; sourceTree = "<group>"; };
+		04BBFFB819EDCA3E0056B5C7 /* EditFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditFriendsTableViewController.m; path = ../EditFriendsTableViewController.m; sourceTree = "<group>"; };
 		04BC9AEC19E45CFC00EB0590 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Ribbit/Bolts.framework; sourceTree = "<group>"; };
 		04BC9AED19E45CFD00EB0590 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Ribbit/Parse.framework; sourceTree = "<group>"; };
 		04BC9AF019E45D7700EB0590 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -139,13 +142,15 @@
 				0432E76519E3418E00D4844D /* Images */,
 				0432E73719E33F3300D4844D /* AppDelegate.h */,
 				0432E73819E33F3300D4844D /* AppDelegate.m */,
-				0432E73D19E33F3300D4844D /* Main.storyboard */,
+				04BBFFB719EDCA3E0056B5C7 /* EditFriendsTableViewController.h */,
+				04BBFFB819EDCA3E0056B5C7 /* EditFriendsTableViewController.m */,
 				0432E76619E3568700D4844D /* InboxViewController.h */,
 				0432E76719E3568700D4844D /* InboxViewController.m */,
 				0432E74019E33F3300D4844D /* Images.xcassets */,
 				0432E74219E33F3300D4844D /* LaunchScreen.xib */,
 				04BC9B0419E4625500EB0590 /* LoginViewController.h */,
 				04BC9B0519E4625500EB0590 /* LoginViewController.m */,
+				0432E73D19E33F3300D4844D /* Main.storyboard */,
 				04BC9B0719E4626100EB0590 /* SignupViewController.h */,
 				04BC9B0819E4626100EB0590 /* SignupViewController.m */,
 				0432E73319E33F3300D4844D /* Supporting Files */,
@@ -319,6 +324,7 @@
 			files = (
 				04BC9B0619E4625500EB0590 /* LoginViewController.m in Sources */,
 				0432E73919E33F3300D4844D /* AppDelegate.m in Sources */,
+				04BBFFB919EDCA3E0056B5C7 /* EditFriendsTableViewController.m in Sources */,
 				0432E73619E33F3300D4844D /* main.m in Sources */,
 				0432E76819E3568700D4844D /* InboxViewController.m in Sources */,
 				04BC9B0919E4626100EB0590 /* SignupViewController.m in Sources */,
