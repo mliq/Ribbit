@@ -17,8 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
+        NSLog(@"Current user: %@", currentUser.username);
+    }
+    else {
         NSLog(@"Current user: %@", currentUser.username);
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
@@ -104,5 +108,13 @@
 */
 
 - (IBAction)logout:(id)sender {
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        [PFUser logOut];
+    }
+    else {
+        
+    }
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
 }
 @end
