@@ -17,8 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        NSLog(@"Current user: %@", currentUser.username);
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -100,4 +103,6 @@
 }
 */
 
+- (IBAction)logout:(id)sender {
+}
 @end

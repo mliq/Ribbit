@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "Parse/Parse.h"
+#import <Parse/Parse.h>
 
 @interface LoginViewController ()
 

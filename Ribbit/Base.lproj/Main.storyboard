@@ -25,7 +25,13 @@
                             <outlet property="delegate" destination="Om3-HU-We8" id="Y9h-us-eFI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ribbit" id="ql3-1L-9EW"/>
+                    <navigationItem key="navigationItem" title="Ribbit" id="ql3-1L-9EW">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="Z5c-Bl-wxu">
+                            <connections>
+                                <action selector="logout:" destination="Om3-HU-We8" id="bK8-lq-x3Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="7zI-TP-X23" kind="show" identifier="showLogin" id="a8e-vf-cCw"/>
                     </connections>
