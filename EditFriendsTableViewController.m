@@ -17,14 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    PFQuery *query = [PFUser query];
+    PFQuery *query = [PFUser query]; //     PFQuery *query = [PFQuery queryWithClassName:@"Apps"];
+
     [query orderByAscending:@"username"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
         else {
-            self.allUsers = objects;
+            self.allUsers = objects; //self.apps = objects;
             NSLog(@"%@", self.allUsers);
             [self.tableView reloadData];
         }
