@@ -7,7 +7,7 @@
 //
 
 #import "EditFriendsTableViewController.h"
-#import <Parse/Parse.h>
+//#import <Parse/Parse.h>
 
 @interface EditFriendsTableViewController ()
 
@@ -30,6 +30,9 @@
             [self.tableView reloadData];
         }
     }];
+    
+    self.currentUser = [PFUser currentUser];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -66,6 +69,25 @@
     
     return cell;
 }
+
+#pragma mark - Table Navigation
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
+    PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
+    [friendsRelation addObject:user];
+    [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            NSLog(@"Error %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
 
 //
 ///*
