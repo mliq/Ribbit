@@ -128,7 +128,6 @@
                     <navigationItem key="navigationItem" title="Friends" id="kwZ-7J-Gwu">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="x9i-51-4aD">
                             <connections>
-                                <action selector="edit:" destination="sVc-e1-GYo" id="3Jp-7H-An2"/>
                                 <segue destination="HYZ-gD-HRI" kind="show" identifier="editFriends" id="VCb-Yn-SqF"/>
                             </connections>
                         </barButtonItem>

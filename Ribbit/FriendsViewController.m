@@ -18,9 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-- (IBAction)Edit:(id)sender {
-    [self performSegueWithIdentifier:@"editFriends" sender:sender];
-}
+//- (IBAction)Edit:(id)sender {
+//    [self performSegueWithIdentifier:@"editFriends" sender:sender];
+//}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
