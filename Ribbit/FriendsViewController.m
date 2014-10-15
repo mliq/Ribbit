@@ -7,6 +7,7 @@
 //
 
 #import "FriendsViewController.h"
+#import "EditFriendsTableViewController.h"
 
 @interface FriendsViewController ()
 
@@ -37,10 +38,18 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showEditFriends"]) {
+        EditFriendsTableViewController *viewController = (EditFriendsTableViewController *)segue.destinationViewController;
+        viewController.friends = [NSMutableArray arrayWithArray:self.friends];
+    }
 }
+
+//
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//    // Dispose of any resources that can be recreated.
+//}
 
 #pragma mark - Table view data source
 

@@ -39,11 +39,11 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+//
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//    // Dispose of any resources that can be recreated.
+//}
 
 #pragma mark - Table view data source
 
@@ -63,9 +63,15 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
     PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
     cell.textLabel.text = user.username;
+    
+    if ([self isFriend:user]) { //if user is a friend
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;//add checkmark
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone; //clear checkmark
+    }
     
     return cell;
 }
@@ -86,6 +92,18 @@
             NSLog(@"Error %@ %@", error, [error userInfo]);
         }
     }];
+}
+
+#pragma mark - Helper methods
+
+- (BOOL)isFriend:(PFUser *)user {
+    for (PFUser *friend in self.friends) {
+        if ([friend.objectId isEqualToString:user.objectId]) {
+            return YES; //Friend found
+        }
+        
+    }
+   return NO;
 }
 
 
