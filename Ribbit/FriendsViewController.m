@@ -49,8 +49,20 @@
 //    NSLog(@"Button clicked %@", sender); //Log to determine the sender.
     if ([segue.identifier isEqualToString:@"editFriends"]) {
         NSLog(@"Segue is working!");
-        EditFriendsTableViewController *viewController = (EditFriendsTableViewController *)segue.destinationViewController; //segue.destinationViewController;
-        viewController.friends = [NSMutableArray arrayWithArray:self.friends]; //Sets friends in the Edit viewcontroller equal to friends from this one.
+        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        EditFriendsTableViewController *controller = (EditFriendsTableViewController *)navController.topViewController;
+        controller.friends = [NSMutableArray arrayWithArray:self.friends];
+        
+        /* Error that friends is not a property
+        EditFriendsTableViewController *controller = (EditFriendsTableViewController *)segue.destinationViewController;
+        EditFriendsTableViewController.friends = [NSMutableArray arrayWithArray:self.friends]; //Sets friends in the Edit viewcontroller equal to friends from this one.
+        */
+        
+        //EditFriendsTableViewController *viewController =
+        //[[viewController alloc] initWithNib:[@"EditFriendsTableViewController" bundle:nil];
+                                                          
+        //(EditFriendsTableViewController *)segue.destinationViewController; //segue.destinationViewController;
+
     }
 }
 
