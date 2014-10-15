@@ -126,7 +126,10 @@
 #pragma mark - Helper methods
 
 - (BOOL)isFriend:(PFUser *)user {
+    NSLog(@"isFriend Running!");
+    NSLog(@"%@",self.friends); //null, ok so the problem is that self.friends is empty.
     for (PFUser *friend in self.friends) {
+            NSLog(@"isFriend Looping!");
         if ([friend.objectId isEqualToString:user.objectId]) {
             NSLog(@"Yes %@ is a friend",user.objectId);
             return YES; //Friend found

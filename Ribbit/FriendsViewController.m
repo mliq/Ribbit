@@ -17,8 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+- (IBAction)Edit:(id)sender {
+    [self performSegueWithIdentifier:@"editFriends" sender:sender];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     
     self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+
     PFQuery *query = [self.friendsRelation query];
     [query orderByAscending:@"username"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -26,18 +35,20 @@
             NSLog(@"Error %@ %@", error, [error userInfo]);
         }
         else {
-            self.friends = objects; //store friends in objects
+            self.friends = objects; //get friends from objects and put into friends array
             [self.tableView reloadData]; //refresh data
         }
     }];
+
 }
+
 
 // method to segue to showEditFriends
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender { //Bug is if we allow the default: sender:(id)sender
 //    NSLog(@"Button clicked %@", sender); //Log to determine the sender.
-    if ([segue.identifier isEqualToString:@"showEditFriends"]) {
-        
+    if ([segue.identifier isEqualToString:@"editFriends"]) {
+        NSLog(@"Segue is working!");
         EditFriendsTableViewController *viewController = (EditFriendsTableViewController *)segue.destinationViewController; //segue.destinationViewController;
         viewController.friends = [NSMutableArray arrayWithArray:self.friends]; //Sets friends in the Edit viewcontroller equal to friends from this one.
     }
@@ -119,6 +130,4 @@
 }
 */
 
-- (IBAction)Edit:(id)sender {
-}
 @end
