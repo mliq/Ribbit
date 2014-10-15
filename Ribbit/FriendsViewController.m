@@ -34,7 +34,7 @@
 
 // method to segue to showEditFriends
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue { //Bug is if we allow the default: sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender { //Bug is if we allow the default: sender:(id)sender
 //    NSLog(@"Button clicked %@", sender); //Log to determine the sender.
     if ([segue.identifier isEqualToString:@"showEditFriends"]) {
         
@@ -119,4 +119,6 @@
 }
 */
 
+- (IBAction)Edit:(id)sender {
+}
 @end
