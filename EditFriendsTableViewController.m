@@ -58,7 +58,7 @@
     return [self.allUsers count];
 }
 
-
+// Draw cells based on who is already friends.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"Cell";
@@ -78,22 +78,49 @@
 }
 
 #pragma mark - Table Navigation
-
+//When User Taps on a Cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
     
-    PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
+    //as it loops put each user into user variable, put relation into relation variable
     PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
-    [friendsRelation addObject:user];
-    [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error) {
-            NSLog(@"Error %@ %@", error, [error userInfo]);
+    PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
+    if ([self isFriend:user]) { //if user tapped is a friend already, REMOVE them
+        
+        // 1. remove checkmark
+            cell.accessoryType = UITableViewCellAccessoryNone;
+
+        // 2. remove from array of friends
+            for (PFUser *friend in self.friends) { // Loop through local array to find that friend
+                if ([friend.objectId isEqualToString:user.objectId]) {
+                    [self.friends removeObject:friend];
+                    break; // exit loop
+                }
+            }
+
+        // 3. remove from backend (parse.com)
+            [friendsRelation removeObject:user];
+    }
+    else{ //if not a friend already, ADD them
+        
+        // 1. Add Checkmark
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+
+        // 2. add to array of friends
+            PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
+            [self.friends addObject:user]; //add to local array
+
+        // 3. Add to Parse.com backend
+            [friendsRelation addObject:user];
         }
-    }];
+    // Update Parse.com with changes.
+        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (error) {
+                NSLog(@"Error %@ %@", error, [error userInfo]);}
+            }];
 }
 
 #pragma mark - Helper methods
@@ -101,6 +128,7 @@
 - (BOOL)isFriend:(PFUser *)user {
     for (PFUser *friend in self.friends) {
         if ([friend.objectId isEqualToString:user.objectId]) {
+            NSLog(@"Yes %@ is a friend",user.objectId);
             return YES; //Friend found
         }
     }
