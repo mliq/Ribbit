@@ -107,13 +107,13 @@
         <!--Friends-->
         <scene sceneID="Nqh-Mg-BZc">
             <objects>
-                <tableViewController id="sVc-e1-GYo" sceneMemberID="viewController">
+                <tableViewController id="sVc-e1-GYo" customClass="FriendsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="b8A-qj-58z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friends" id="5A0-nN-n74">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="5A0-nN-n74">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5A0-nN-n74" id="0Zn-b8-pkz">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -162,7 +162,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWi-Uv-g6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2994" y="117"/>
+            <point key="canvasLocation" x="2924" y="123"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="IaX-zx-6aA">

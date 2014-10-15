@@ -21,6 +21,7 @@
 		0432E76419E3418100D4844D /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0432E75E19E3418100D4844D /* inbox@2x.png */; };
 		0432E76819E3568700D4844D /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432E76719E3568700D4844D /* InboxViewController.m */; };
 		04BBFFB919EDCA3E0056B5C7 /* EditFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BBFFB819EDCA3E0056B5C7 /* EditFriendsTableViewController.m */; };
+		04BBFFBF19EEE7790056B5C7 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BBFFBE19EEE7790056B5C7 /* FriendsViewController.m */; };
 		04BC9AEE19E45CFD00EB0590 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BC9AEC19E45CFC00EB0590 /* Bolts.framework */; };
 		04BC9AEF19E45CFD00EB0590 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BC9AED19E45CFD00EB0590 /* Parse.framework */; };
 		04BC9AFA19E45D7700EB0590 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BC9AF019E45D7700EB0590 /* AudioToolbox.framework */; };
@@ -69,6 +70,8 @@
 		0432E76719E3568700D4844D /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
 		04BBFFB719EDCA3E0056B5C7 /* EditFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditFriendsTableViewController.h; path = ../EditFriendsTableViewController.h; sourceTree = "<group>"; };
 		04BBFFB819EDCA3E0056B5C7 /* EditFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditFriendsTableViewController.m; path = ../EditFriendsTableViewController.m; sourceTree = "<group>"; };
+		04BBFFBD19EEE7790056B5C7 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		04BBFFBE19EEE7790056B5C7 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		04BC9AEC19E45CFC00EB0590 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Ribbit/Bolts.framework; sourceTree = "<group>"; };
 		04BC9AED19E45CFD00EB0590 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Ribbit/Parse.framework; sourceTree = "<group>"; };
 		04BC9AF019E45D7700EB0590 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -144,6 +147,8 @@
 				0432E73819E33F3300D4844D /* AppDelegate.m */,
 				04BBFFB719EDCA3E0056B5C7 /* EditFriendsTableViewController.h */,
 				04BBFFB819EDCA3E0056B5C7 /* EditFriendsTableViewController.m */,
+				04BBFFBD19EEE7790056B5C7 /* FriendsViewController.h */,
+				04BBFFBE19EEE7790056B5C7 /* FriendsViewController.m */,
 				0432E76619E3568700D4844D /* InboxViewController.h */,
 				0432E76719E3568700D4844D /* InboxViewController.m */,
 				0432E74019E33F3300D4844D /* Images.xcassets */,
@@ -324,6 +329,7 @@
 			files = (
 				04BC9B0619E4625500EB0590 /* LoginViewController.m in Sources */,
 				0432E73919E33F3300D4844D /* AppDelegate.m in Sources */,
+				04BBFFBF19EEE7790056B5C7 /* FriendsViewController.m in Sources */,
 				04BBFFB919EDCA3E0056B5C7 /* EditFriendsTableViewController.m in Sources */,
 				0432E73619E33F3300D4844D /* main.m in Sources */,
 				0432E76819E3568700D4844D /* InboxViewController.m in Sources */,
