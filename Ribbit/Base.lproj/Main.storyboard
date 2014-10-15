@@ -126,7 +126,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Friends" id="kwZ-7J-Gwu">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="x9i-51-4aD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="x9i-51-4aD">
                             <connections>
                                 <segue destination="HYZ-gD-HRI" kind="show" identifier="showEditFriends" id="icF-d4-l3N"/>
                             </connections>
@@ -325,6 +325,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HYZ-gD-HRI" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="y29-zR-0ZJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W9j-6V-xvM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

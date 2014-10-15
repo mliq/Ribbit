@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     PFQuery *query = [PFUser query]; //     PFQuery *query = [PFQuery queryWithClassName:@"Apps"];
 
     [query orderByAscending:@"username"];
@@ -39,11 +40,11 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-//
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
-//}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 #pragma mark - Table view data source
 
@@ -81,6 +82,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
     
@@ -101,7 +103,6 @@
         if ([friend.objectId isEqualToString:user.objectId]) {
             return YES; //Friend found
         }
-        
     }
    return NO;
 }

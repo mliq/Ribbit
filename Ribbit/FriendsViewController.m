@@ -26,30 +26,28 @@
             NSLog(@"Error %@ %@", error, [error userInfo]);
         }
         else {
-            self.friends = objects;
-            [self.tableView reloadData];
+            self.friends = objects; //store friends in objects
+            [self.tableView reloadData]; //refresh data
         }
     }];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+// method to segue to showEditFriends
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue { //Bug is if we allow the default: sender:(id)sender
+//    NSLog(@"Button clicked %@", sender); //Log to determine the sender.
     if ([segue.identifier isEqualToString:@"showEditFriends"]) {
-        EditFriendsTableViewController *viewController = (EditFriendsTableViewController *)segue.destinationViewController;
-        viewController.friends = [NSMutableArray arrayWithArray:self.friends];
+        
+        EditFriendsTableViewController *viewController = (EditFriendsTableViewController *)segue.destinationViewController; //segue.destinationViewController;
+        viewController.friends = [NSMutableArray arrayWithArray:self.friends]; //Sets friends in the Edit viewcontroller equal to friends from this one.
     }
 }
 
-//
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
-//}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 #pragma mark - Table view data source
 
