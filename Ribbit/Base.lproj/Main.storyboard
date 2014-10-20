@@ -164,10 +164,10 @@
             </objects>
             <point key="canvasLocation" x="2924" y="123"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="IaX-zx-6aA">
             <objects>
-                <tableViewController id="MBY-oR-vxb" sceneMemberID="viewController">
+                <tableViewController id="MBY-oR-vxb" customClass="CameraViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ljB-jX-Hxe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

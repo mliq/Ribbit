@@ -36,6 +36,7 @@
 		04BC9B0319E45D7700EB0590 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BC9AF919E45D7700EB0590 /* SystemConfiguration.framework */; };
 		04BC9B0619E4625500EB0590 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC9B0519E4625500EB0590 /* LoginViewController.m */; };
 		04BC9B0919E4626100EB0590 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC9B0819E4626100EB0590 /* SignupViewController.m */; };
+		04FA603719F19B4300DD60B8 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA603619F19B4300DD60B8 /* CameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		04BC9B0519E4625500EB0590 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		04BC9B0719E4626100EB0590 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		04BC9B0819E4626100EB0590 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		04FA603519F19B4300DD60B8 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		04FA603619F19B4300DD60B8 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,8 @@
 				0432E76519E3418E00D4844D /* Images */,
 				0432E73719E33F3300D4844D /* AppDelegate.h */,
 				0432E73819E33F3300D4844D /* AppDelegate.m */,
+				04FA603519F19B4300DD60B8 /* CameraViewController.h */,
+				04FA603619F19B4300DD60B8 /* CameraViewController.m */,
 				04BBFFB719EDCA3E0056B5C7 /* EditFriendsTableViewController.h */,
 				04BBFFB819EDCA3E0056B5C7 /* EditFriendsTableViewController.m */,
 				04BBFFBD19EEE7790056B5C7 /* FriendsViewController.h */,
@@ -328,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BC9B0619E4625500EB0590 /* LoginViewController.m in Sources */,
+				04FA603719F19B4300DD60B8 /* CameraViewController.m in Sources */,
 				0432E73919E33F3300D4844D /* AppDelegate.m in Sources */,
 				04BBFFBF19EEE7790056B5C7 /* FriendsViewController.m in Sources */,
 				04BBFFB919EDCA3E0056B5C7 /* EditFriendsTableViewController.m in Sources */,
