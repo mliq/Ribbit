@@ -164,7 +164,7 @@
             </objects>
             <point key="canvasLocation" x="2924" y="123"/>
         </scene>
-        <!--Camera View Controller-->
+        <!--Recipients-->
         <scene sceneID="IaX-zx-6aA">
             <objects>
                 <tableViewController id="MBY-oR-vxb" customClass="CameraViewController" sceneMemberID="viewController">
@@ -185,7 +185,7 @@
                             <outlet property="delegate" destination="MBY-oR-vxb" id="4RO-HV-i7p"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="CtW-zi-WpW"/>
+                    <navigationItem key="navigationItem" title="Recipients" id="CtW-zi-WpW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7W-BB-jue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

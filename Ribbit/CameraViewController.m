@@ -7,6 +7,7 @@
 //
 
 #import "CameraViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface CameraViewController ()
 
@@ -65,58 +66,36 @@
     [self.tabBarController setSelectedIndex:0];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    // Configure the cell...
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     
-    return cell;
+    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
+
+        //A photo was taken or selected!
+        self.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+
+        if (self.imagePicker.sourceType ==UIImagePickerControllerSourceTypeCamera) {
+            UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil);
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else {
+
+        //A video was taken or selected!
+        
+        NSURL *imagePickerURL = [info objectForKey:UIImagePickerControllerMediaURL];
+        
+        self.videoFilePath = [imagePickerURL path];
+        
+        //WARNING: self.videoFilePath = [[info objectForKey:UIImagePickerControllerMediaURL] path];
+
+        if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+            // save the video
+            if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(self.videoFilePath)) {
+                UISaveVideoAtPathToSavedPhotosAlbum(self.videoFilePath, nil, nil, nil);
+            }
+        }
+    }
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

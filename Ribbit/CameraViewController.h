@@ -11,5 +11,7 @@
 @interface CameraViewController : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> //Says CameraViewController will conform to UIImagePickerControllerDelegate, and must also conform to UINavigationControllerDelegate.
 
 @property (strong,nonatomic) UIImagePickerController *imagePicker;
+@property (nonatomic,strong) UIImage *image;
+@property (nonatomic,strong) NSString *videoFilePath;
 
 @end
