@@ -85,7 +85,7 @@
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    //as it loops put each user into user variable, put relation into relation variable
+    //as if loops put each user into user variable, put relation into relation variable
     PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
     PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
     if ([self isFriend:user]) { //if user tapped is a friend already, REMOVE them

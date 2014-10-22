@@ -18,30 +18,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     //Set the friends relation first time view loads only
     self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
     
-    [super viewWillAppear:animated];
+    self.recipients = [[NSMutableArray alloc] init];
     
-    PFQuery *query = [self.friendsRelation query];
-    [query orderByAscending:@"username"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"Error %@ %@", error, [error userInfo]);
-        }
-        else {
-            self.friends = objects; //get friends from objects and put into friends array
-            [self.tableView reloadData]; //refresh data
-        }
-    }];
- 
     self.imagePicker = [[UIImagePickerController alloc] init];
     self.imagePicker.delegate = self;// Explicitly tells CameraViewController that this image picker is its delegate
-
-     //set no allows editing, can cause memory issues, and max Video Duration
+    
+    //set no allows editing, can cause memory issues, and max Video Duration
     self.imagePicker.allowsEditing = NO;
     self.imagePicker.videoMaximumDuration = 10;
     
@@ -65,16 +51,90 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-#pragma mark - Table view data source
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+
+    //Query to get friends list
+    PFQuery *query = [self.friendsRelation query];
+    
+    //Order by username
+    [query orderByAscending:@"username"];
+    
+    //Execute in background
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"Error %@ %@", error, [error userInfo]);
+        }
+        else {
+            self.friends = objects; //get friends from objects and put into friends array
+            [self.tableView reloadData]; //refresh data
+        }
+    }];
+ 
+ 
+}
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Do not highlight row
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    //set cell variable to currently selected cell
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    PFUser *user = [self.friends objectAtIndex:indexPath.row];
+    
+    //Toggle checkmark
+    if (cell.accessoryType == UITableViewCellAccessoryNone) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.recipients addObject:user.objectId];
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        [self.recipients removeObject:user.objectId];
+    }
+    
+//NSLog(@"%@", self.recipients);
+}
+
+
+
+                                                                                                             
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
+    // Return the number of rows in the section (count of friends list)
     return [self.friends count];
+}
+
+// Draw cells based on who is already friends.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    PFUser *user = [self.friends objectAtIndex:indexPath.row];
+    cell.textLabel.text = user.username;
+    
+    //Ensure that checkmarks are only those we really selected here.
+    if ([self.recipients containsObject:user.objectId]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+//
+//    if ([self isFriend:user]) { //if user is a friend
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;//add checkmark
+//    }
+//    else {
+//        cell.accessoryType = UITableViewCellAccessoryNone; //clear checkmark
+//    }
+    
+    return cell;
 }
 
 #pragma mark - Image Picker Controller delegate
@@ -97,8 +157,7 @@
         if (self.imagePicker.sourceType ==UIImagePickerControllerSourceTypeCamera) {
             UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil);
         }
-        //Dismiss ImagePickerViewController
-        [self dismissViewControllerAnimated:YES completion:nil];
+
     }
     else {
 
@@ -117,9 +176,21 @@
                 UISaveVideoAtPathToSavedPhotosAlbum(self.videoFilePath, nil, nil, nil);
             }
         }
-        //Dismiss ImagePickerViewController
-        [self dismissViewControllerAnimated:YES completion:nil];
+
+        
 
     }
+     //Dismiss ImagePickerViewController
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)cancel:(id)sender {
+    self.image = nil;
+    self.videoFilePath = nil;
+    [self.recipients removeAllObjects];
+    
+    [self.tabBarController setSelectedIndex:0];
+}
+
+- (IBAction)send:(id)sender {
 }
 @end

@@ -173,7 +173,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="camera" id="L8z-Z9-B4Q">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="L8z-Z9-B4Q">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L8z-Z9-B4Q" id="mSn-4w-9mn">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -185,7 +185,18 @@
                             <outlet property="delegate" destination="MBY-oR-vxb" id="4RO-HV-i7p"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recipients" id="CtW-zi-WpW"/>
+                    <navigationItem key="navigationItem" title="Recipients" id="CtW-zi-WpW">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="qMa-KW-Fby">
+                            <connections>
+                                <action selector="cancel:" destination="MBY-oR-vxb" id="6pX-aA-smD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="J3O-T3-nUE">
+                            <connections>
+                                <action selector="send:" destination="MBY-oR-vxb" id="mJG-TZ-ZcP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7W-BB-jue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
