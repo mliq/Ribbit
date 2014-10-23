@@ -46,6 +46,7 @@
             [self.tableView reloadData]; //refresh data
         }
     }];
+    
     //Only load image picker if no image saved already
     if (self.image==nil && self.videoFilePath.length==0){
     
@@ -205,7 +206,7 @@
     }
     else { //We do have a file
         [self uploadMessage];
-        [self reset];
+        //moving reset to upload because the self.recipients gets cleared before upload complete due to asynchronocity/background
         [self.tabBarController setSelectedIndex:0];
     }
 }
@@ -264,7 +265,7 @@
                     [alertView show];
                 }
                 else {
-                    
+                    [self reset];
                 }
             }];
         }
