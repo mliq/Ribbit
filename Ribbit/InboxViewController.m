@@ -37,11 +37,14 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 
-    //Query to see who the intended receivers of a message are.
+    //Query to get messages intended for the Current User
     
     PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
     [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
+
+    // Order by descending creation date/time
     [query orderByDescending:@"createdAt"];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(error){
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -69,9 +72,9 @@
     return [self.messages count];
 }
 
-
+//Populates the cells of the table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //Configure the Cell
+    //Identifies the cells and cycles through them for memory purposes
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     PFObject *message = [self.messages objectAtIndex:indexPath.row];
@@ -87,6 +90,17 @@
     return cell;
 }
 
+//What happens when a row is selected:
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //access the message so we can later determine if its video or image
+    PFObject *message = [self.messages objectAtIndex:indexPath.row];
+    NSString *fileType = [message objectForKey:@"fileType"];
+    if ([fileType isEqualToString:@"image"]) {
+        [self performSegueWithIdentifier:@"showImage" sender:self];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -131,6 +145,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Helper Methods
 
 - (IBAction)logout:(id)sender {
     PFUser *currentUser = [PFUser currentUser];

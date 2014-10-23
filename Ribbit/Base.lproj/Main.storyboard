@@ -4,6 +4,29 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="F66-OD-79g">
+            <objects>
+                <viewController id="MY2-5p-fD5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WlJ-Sx-bTQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="4yI-Me-xMz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VLy-iT-f0f">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cpb-Zb-6aG">
+                                <rect key="frame" x="-65" y="-59" width="665" height="610"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbt-iO-Hfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1365" y="-1525"/>
+        </scene>
         <!--Ribbit-->
         <scene sceneID="Jld-8G-Kqh">
             <objects>
@@ -34,11 +57,12 @@
                     </navigationItem>
                     <connections>
                         <segue destination="7zI-TP-X23" kind="show" identifier="showLogin" id="a8e-vf-cCw"/>
+                        <segue destination="MY2-5p-fD5" kind="show" identifier="showImage" id="fvJ-Pg-tv6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2c-pB-ir7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380" y="-699"/>
+            <point key="canvasLocation" x="1382" y="-725"/>
         </scene>
         <!--Ribbit-->
         <scene sceneID="vLp-yg-V8j">
