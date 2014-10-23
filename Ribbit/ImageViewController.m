@@ -24,12 +24,15 @@
     NSData *imageData = [NSData dataWithContentsOfURL:imageFileUrl];
     self.imageView.image = [UIImage imageWithData:imageData];
     
+    NSString *senderName = [self.message objectForKey:@"senderName"];
+    NSString *title = [NSString stringWithFormat:@"Sent from %@", senderName];
+    self.navigationItem.title = title;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//    // Dispose of any resources that can be recreated.
+//}
 
 /*
 #pragma mark - Navigation

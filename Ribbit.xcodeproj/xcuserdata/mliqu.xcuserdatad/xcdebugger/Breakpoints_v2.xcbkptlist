@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ribbit/InboxViewController.m"
-            timestampString = "435797026.546223"
+            timestampString = "435799861.61397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "-logout:"
             landmarkType = "5">
          </BreakpointContent>

@@ -53,7 +53,7 @@
             //We found messages!
             self.messages = objects;
             [self.tableView reloadData];
-            NSLog(@"Retrieved %lu messages",(unsigned long)[self.messages count]);
+//            NSLog(@"Retrieved %lu messages",(unsigned long)[self.messages count]);
         }
     }];
     
@@ -74,12 +74,15 @@
 
 //Populates the cells of the table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
     //Identifies the cells and cycles through them for memory purposes
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
+    //Populate cells with messages from Parse, labeled by senderName
     PFObject *message = [self.messages objectAtIndex:indexPath.row];
     cell.textLabel.text = [message objectForKey:@"senderName"];
-    
+
+    //Check fileType for icon display
     NSString *fileType = [message objectForKey:@"fileType"];
     if ([fileType isEqualToString:@"image"]) {
         cell.imageView.image = [UIImage imageNamed:@"icon_image"];
@@ -94,10 +97,16 @@
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //I think the bad behavior is that it does not determine the image type until the first click?
+    
     //access the message so we can later determine if its video or image
-//    PFObject *message = [self.messages objectAtIndex:indexPath.row];
+    //PFObject *message = [self.messages objectAtIndex:indexPath.row];
+    
+    //set the selected cell as selectedMessage variable (property)
     self.selectedMessage  = [self.messages objectAtIndex:indexPath.row];
+    //check the fileType and save it to fileType variable.
     NSString *fileType = [self.selectedMessage objectForKey:@"fileType"];
+    
     if ([fileType isEqualToString:@"image"]) {
         [self performSegueWithIdentifier:@"showImage" sender:self];
     }
@@ -137,15 +146,28 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    // This is what happens when certain outlets are triggered from Main.storyboard
+    
+    //When logout button is clicked
+    if ([segue.identifier isEqualToString:@"showLogin"]) {
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+    }
+    //When an image will be shown
+    else if ([segue.identifier isEqualToString:@"showImage"]) {
+        ImageViewController *imageViewController = (ImageViewController *)segue.destinationViewController;
+        imageViewController.message = self.selectedMessage;
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+    }
+
 }
-*/
 
 #pragma mark - Helper Methods
 
@@ -160,17 +182,4 @@
     [self performSegueWithIdentifier:@"showLogin" sender:self];
 }
 
-// This is what happens when certain outlets are triggered from Main.storyboard
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //When logout button is clicked
-    if ([segue.identifier isEqualToString:@"showLogin"]) {
-        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
-    }
-    //When an image will be shown
-    else if ([segue.identifier isEqualToString:@"showImage"]) {
-        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
-        ImageViewController *imageViewController = (ImageViewController *)segue.destinationViewController;
-        imageViewController.message = self.selectedMessage;
-    }
-}
 @end
