@@ -248,6 +248,10 @@
     
     PFFile *file = [PFFile fileWithName:fileName data:fileData contentType:fileType];
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        //Error tester
+       // error = @"1";
+//        error = [[NSError alloc] init];
+        
         if(error) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!" message:@"Please try sending your image/video again!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];

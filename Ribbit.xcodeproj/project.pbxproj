@@ -36,6 +36,10 @@
 		04BC9B0319E45D7700EB0590 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BC9AF919E45D7700EB0590 /* SystemConfiguration.framework */; };
 		04BC9B0619E4625500EB0590 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC9B0519E4625500EB0590 /* LoginViewController.m */; };
 		04BC9B0919E4626100EB0590 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC9B0819E4626100EB0590 /* SignupViewController.m */; };
+		04E88F2819F99B67008036E0 /* icon_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E88F2419F99B67008036E0 /* icon_image.png */; };
+		04E88F2919F99B67008036E0 /* icon_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E88F2519F99B67008036E0 /* icon_image@2x.png */; };
+		04E88F2A19F99B67008036E0 /* icon_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E88F2619F99B67008036E0 /* icon_video.png */; };
+		04E88F2B19F99B67008036E0 /* icon_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E88F2719F99B67008036E0 /* icon_video@2x.png */; };
 		04FA603719F19B4300DD60B8 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA603619F19B4300DD60B8 /* CameraViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +93,10 @@
 		04BC9B0519E4625500EB0590 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		04BC9B0719E4626100EB0590 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		04BC9B0819E4626100EB0590 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		04E88F2419F99B67008036E0 /* icon_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_image.png; sourceTree = "<group>"; };
+		04E88F2519F99B67008036E0 /* icon_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_image@2x.png"; sourceTree = "<group>"; };
+		04E88F2619F99B67008036E0 /* icon_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_video.png; sourceTree = "<group>"; };
+		04E88F2719F99B67008036E0 /* icon_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_video@2x.png"; sourceTree = "<group>"; };
 		04FA603519F19B4300DD60B8 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		04FA603619F19B4300DD60B8 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +205,10 @@
 		0432E76519E3418E00D4844D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				04E88F2419F99B67008036E0 /* icon_image.png */,
+				04E88F2519F99B67008036E0 /* icon_image@2x.png */,
+				04E88F2619F99B67008036E0 /* icon_video.png */,
+				04E88F2719F99B67008036E0 /* icon_video@2x.png */,
 				0432E75919E3418100D4844D /* camera.png */,
 				0432E75A19E3418100D4844D /* camera@2x.png */,
 				0432E75B19E3418100D4844D /* friends.png */,
@@ -306,15 +318,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E88F2A19F99B67008036E0 /* icon_video.png in Resources */,
 				0432E73F19E33F3300D4844D /* Main.storyboard in Resources */,
 				0432E76119E3418100D4844D /* friends.png in Resources */,
+				04E88F2819F99B67008036E0 /* icon_image.png in Resources */,
 				0432E76219E3418100D4844D /* friends@2x.png in Resources */,
 				0432E76019E3418100D4844D /* camera@2x.png in Resources */,
 				0432E76319E3418100D4844D /* inbox.png in Resources */,
 				0432E74419E33F3300D4844D /* LaunchScreen.xib in Resources */,
+				04E88F2919F99B67008036E0 /* icon_image@2x.png in Resources */,
 				0432E75F19E3418100D4844D /* camera.png in Resources */,
 				0432E74119E33F3300D4844D /* Images.xcassets in Resources */,
 				0432E76419E3418100D4844D /* inbox@2x.png in Resources */,
+				04E88F2B19F99B67008036E0 /* icon_video@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
