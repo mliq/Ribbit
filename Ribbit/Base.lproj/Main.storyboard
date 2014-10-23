@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Image View Controller-->
         <scene sceneID="F66-OD-79g">
             <objects>
-                <viewController id="MY2-5p-fD5" sceneMemberID="viewController">
+                <viewController id="MY2-5p-fD5" customClass="ImageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WlJ-Sx-bTQ"/>
                         <viewControllerLayoutGuide type="bottom" id="4yI-Me-xMz"/>
@@ -17,11 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cpb-Zb-6aG">
-                                <rect key="frame" x="-65" y="-59" width="665" height="610"/>
+                                <rect key="frame" x="-65" y="-59" width="670" height="610"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="cpb-Zb-6aG" id="D8S-8p-DGY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbt-iO-Hfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

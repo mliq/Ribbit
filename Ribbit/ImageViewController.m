@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //download file from Parse
+    PFFile *imageFile = [self.message objectForKey:@"file"];
+    //Get URL property (NSString)
+    NSURL *imageFileUrl = [[NSURL alloc] initWithString:imageFile.url];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageFileUrl];
+    self.imageView.image = [UIImage imageWithData:imageData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +40,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end
