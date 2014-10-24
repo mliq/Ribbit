@@ -166,6 +166,18 @@
         imageViewController.message = self.selectedMessage;
         [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
     }
+        /* Non-Fix idea
+        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        ImageViewController *controller = (ImageViewController *)navController.topViewController;
+        controller.message = self.selectedMessage;
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+        */
+        /* Original
+        ImageViewController *imageViewController = (ImageViewController *)segue.destinationViewController;
+        imageViewController.message = self.selectedMessage;
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+         */
+//    }
 
 }
 
