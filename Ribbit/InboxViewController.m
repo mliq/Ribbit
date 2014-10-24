@@ -95,7 +95,7 @@
 
 //What happens when a row is selected:
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //I think the bad behavior is that it does not determine the image type until the first click?
     
