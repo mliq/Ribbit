@@ -22,7 +22,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QIG-Yb-nTH"/>
                     <connections>
                         <outlet property="imageView" destination="cpb-Zb-6aG" id="D8S-8p-DGY"/>
                     </connections>
