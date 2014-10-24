@@ -29,6 +29,28 @@
     self.navigationItem.title = title;
 }
 
+//Make disappear after 10 seconds
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    if([self respondsToSelector:@selector(timeout)]) {
+        //selector(methodName) timeout is not a core function, this is something I will create
+        [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(timeout) userInfo:nil repeats:NO];
+    }
+    else {
+        NSLog(@"Error: selector missing!");
+    }
+}
+
+#pragma mark - Helper methods
+
+- (void)timeout {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+@end
+
+
 //- (void)didReceiveMemoryWarning {
 //    [super didReceiveMemoryWarning];
 //    // Dispose of any resources that can be recreated.
@@ -44,5 +66,3 @@
 }
 */
 
-
-@end
