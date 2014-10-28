@@ -20,6 +20,7 @@
 		0432E76319E3418100D4844D /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 0432E75D19E3418100D4844D /* inbox.png */; };
 		0432E76419E3418100D4844D /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0432E75E19E3418100D4844D /* inbox@2x.png */; };
 		0432E76819E3568700D4844D /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432E76719E3568700D4844D /* InboxViewController.m */; };
+		0434F5181A00413F00FEA136 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0434F5171A00413F00FEA136 /* MediaPlayer.framework */; };
 		04BBFFB919EDCA3E0056B5C7 /* EditFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BBFFB819EDCA3E0056B5C7 /* EditFriendsTableViewController.m */; };
 		04BBFFBF19EEE7790056B5C7 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BBFFBE19EEE7790056B5C7 /* FriendsViewController.m */; };
 		04BC9AEE19E45CFD00EB0590 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BC9AEC19E45CFC00EB0590 /* Bolts.framework */; };
@@ -74,6 +75,7 @@
 		0432E75E19E3418100D4844D /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
 		0432E76619E3568700D4844D /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
 		0432E76719E3568700D4844D /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
+		0434F5171A00413F00FEA136 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		04BBFFB719EDCA3E0056B5C7 /* EditFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditFriendsTableViewController.h; path = ../EditFriendsTableViewController.h; sourceTree = "<group>"; };
 		04BBFFB819EDCA3E0056B5C7 /* EditFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditFriendsTableViewController.m; path = ../EditFriendsTableViewController.m; sourceTree = "<group>"; };
 		04BBFFBD19EEE7790056B5C7 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0434F5181A00413F00FEA136 /* MediaPlayer.framework in Frameworks */,
 				04BC9AFA19E45D7700EB0590 /* AudioToolbox.framework in Frameworks */,
 				04BC9AFB19E45D7700EB0590 /* CFNetwork.framework in Frameworks */,
 				04BC9AFC19E45D7700EB0590 /* CoreGraphics.framework in Frameworks */,
@@ -227,6 +230,7 @@
 		04BC9B0A19E4628100EB0590 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0434F5171A00413F00FEA136 /* MediaPlayer.framework */,
 				04BC9AEC19E45CFC00EB0590 /* Bolts.framework */,
 				04BC9AED19E45CFD00EB0590 /* Parse.framework */,
 				04BC9AF019E45D7700EB0590 /* AudioToolbox.framework */,
